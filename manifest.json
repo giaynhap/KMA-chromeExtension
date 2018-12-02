@@ -1,0 +1,41 @@
+{
+	"manifest_version": 2,
+	"name": "KMA Extension",
+	"description": "Tiện ích bảo vệ bạn khỏi cá mối nguy hiểm trên các website.",
+	"version": "0.1",
+	"web_accessible_resources":[
+		"font-end/style/facebook-dark-theme.css",
+		"font-end/image/download.png"
+	]
+	,
+	"background": {
+		"scripts": ["font-end/lang.js",	"background.js","blockads.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": ["font-end/protect_script/facebookphishing.js","content.js"]
+
+		}
+	],
+	 "icons": {
+	    "128": "icon.png"  
+	  },
+	"permissions": [
+	  "contextMenus",
+	  "notifications",
+      "webRequest",
+      "webRequestBlocking",
+      "activeTab",
+      "tabs",
+      "storage",
+      "<all_urls>"
+	],
+	 "browser_action": {
+	    "default_icon": "icon.png",
+	    "default_popup": "font-end/popup.html",
+	    "default_title": "Click here!"
+	  } 
+}

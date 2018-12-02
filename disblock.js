@@ -1,0 +1,3 @@
+
+setTi
+window.removeClass = removeClass;
